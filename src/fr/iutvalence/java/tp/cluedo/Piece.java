@@ -8,7 +8,7 @@ public class Piece
 {
 	/**
 	 * Création d'une pièce
-	 * @param nom
+	 * @param nom nom de la pièce
 	 */
 	public Piece(String nom)
 	{
