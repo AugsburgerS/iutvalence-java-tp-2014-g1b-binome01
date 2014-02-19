@@ -1,6 +1,14 @@
 
+/**
+ * Classe principale du jeu Cluedo
+ * @author augsburs
+ */
 public class LanceurCluedo
 {
+	/**
+	 * @param args
+	 * Méthode principale
+	 */
 	public static void main(String[] args)
 	{
 		System.out.println("Création de la partie !");
