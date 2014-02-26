@@ -9,20 +9,20 @@ public class Orientation
 	/**
 	 * L'orientation vers le nord
 	 */
-	public static final int NORD = 0;
+	public static Orientation NORD;
 	
 	/**
 	 * L'orientation vers le sud
 	 */
-	public static final int SUD = 1;
+	public static Orientation SUD;
 	
 	/**
 	 * L'orientation vers l'est
 	 */
-	public static final int EST = 2;
+	public static Orientation EST;
 	
 	/**
 	 * L'orientation vers l'ouest
 	 */
-	public static final int OUEST = 3;
+	public static Orientation OUEST;
 }

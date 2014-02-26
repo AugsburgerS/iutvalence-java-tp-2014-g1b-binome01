@@ -9,65 +9,65 @@ public class Piece
 	/**
 	 * La pièce cuisine
 	 */
-	public static final int CUISINE = 0;
+	public static Piece CUISINE;
 
 	/**
 	 * La pièce chambre
 	 */
-	public static final int CHAMBRE = 1;
+	public static Piece CHAMBRE;
 
 	/**
 	 * La pièce salle de bains
 	 */
-	public static final int SALLE_DE_BAINS = 2;
+	public static Piece SALLE_DE_BAINS;
 
 	/**
 	 * La pièce salle à manger
 	 */
-	public static final int SALLE_A_MANGER = 3;
+	public static Piece SALLE_A_MANGER;
 
 	/**
 	 * La pièce salle de jeux
 	 */
-	public static final int SALLE_DE_JEUX = 4;
+	public static Piece SALLE_DE_JEUX;
 
 	/**
 	 * La pièce bibliothèque
 	 */
-	public static final int BIBLIOTHEQUE = 5;
+	public static Piece BIBLIOTHEQUE;
 	
 	/**
 	 * La pièce bureau
 	 */
-	public static final int BUREAU = 6;
+	public static Piece BUREAU;
 
 	/**
 	 * La pièce hall
 	 */
-	public static final int HALL = 7;
+	public static Piece HALL;
 
 	/**
 	 * La pièce salon
 	 */
-	public static final int SALON = 8;
+	public static Piece SALON;
 
 	/**
 	 * La pièce cluedo
 	 */
-	public static final int CLUEDO = 9;
+	public static Piece CLUEDO;
 
 	/**
 	 * Le type porte
 	 */
-	public static final int PORTE = 10;
+	public static Piece PORTE;
 
 	/**
 	 * La case couloir
 	 */
-	public static final int COULOIR = 11;
+	public static Piece COULOIR;
 
 	/**
 	 * La case vide
 	 */
-	public static final int VIDE = 12;
+	public static Piece VIDE;
 }
