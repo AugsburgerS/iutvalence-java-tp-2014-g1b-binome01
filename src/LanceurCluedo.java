@@ -1,11 +1,14 @@
 import fr.iutvalence.java.tp.cluedo.Cluedo;
 
+
+// TODO corriger le commentaire (c'est une application)
 /**
  * Classe principale du jeu Cluedo
  * @author augsburs
  */
 public class LanceurCluedo
 {
+	// TODO corriger le commentaire
 	/**
 	 * @param args
 	 * Méthode principale
