@@ -12,6 +12,11 @@ public class Cluedo
 	 */
 	private int nombreDeJoueurs;
 	
+	/**
+	 * Plateau de jeu
+	 */
+	private Plateau plateau;
+	
 	// TODO (fait) écrire un commentaire plus précis
 	/**
 	 * Constructeur d'initialisation d'une partie avec un nombre de joueurs défini
@@ -20,6 +25,7 @@ public class Cluedo
 	public Cluedo(int nombreDeJoueurs)
 	{
 		this.nombreDeJoueurs = nombreDeJoueurs;
+		this.plateau = new Plateau();
 	}
 	
 	/**
@@ -27,6 +33,6 @@ public class Cluedo
 	 */
 	public void jouer()
 	{
-		Plateau plateau = new Plateau();
+		this.plateau.afficherPlateau();
 	}
 }

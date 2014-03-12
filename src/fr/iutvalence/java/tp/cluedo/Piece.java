@@ -2,72 +2,97 @@ package fr.iutvalence.java.tp.cluedo;
 
 /**
  * Classe permettant de manipuler les différentes pièces et couloirs
+ * 
  * @author augsburs
  */
-public class Piece
+public enum Piece
 {
+
 	/**
 	 * La pièce cuisine
 	 */
-	public static Piece CUISINE;
+	CUISINE("C"),
 
 	/**
 	 * La pièce chambre
 	 */
-	public static Piece CHAMBRE;
+	CHAMBRE("A"),
 
 	/**
 	 * La pièce salle de bains
 	 */
-	public static Piece SALLE_DE_BAINS;
+	SALLE_DE_BAINS("D"),
 
 	/**
 	 * La pièce salle à manger
 	 */
-	public static Piece SALLE_A_MANGER;
+	SALLE_A_MANGER("M"),
 
 	/**
 	 * La pièce salle de jeux
 	 */
-	public static Piece SALLE_DE_JEUX;
+	SALLE_DE_JEUX("J"),
 
 	/**
 	 * La pièce bibliothèque
 	 */
-	public static Piece BIBLIOTHEQUE;
-	
+	BIBLIOTHEQUE("L"),
+
 	/**
 	 * La pièce bureau
 	 */
-	public static Piece BUREAU;
+	BUREAU("B"),
 
 	/**
 	 * La pièce hall
 	 */
-	public static Piece HALL;
+	HALL("H"),
 
 	/**
 	 * La pièce salon
 	 */
-	public static Piece SALON;
+	SALON("S"),
 
 	/**
 	 * La pièce cluedo
 	 */
-	public static Piece CLUEDO;
+	CLUEDO("O"),
 
 	/**
 	 * Le type porte
 	 */
-	public static Piece PORTE;
+	PORTE("P"),
 
 	/**
 	 * La case couloir
 	 */
-	public static Piece COULOIR;
+	COULOIR("R"),
 
 	/**
 	 * La case vide
 	 */
-	public static Piece VIDE;
+	VIDE("V");
+	
+	/**
+	 * Constante correspondant au symbole d'une pièce
+	 */
+	public final String symbole;
+
+	/**
+	 * Constructeur d'une pièce initialisant le symbole de la dite pièce
+	 * @param caractere
+	 */
+	private Piece(String symbole)
+	{
+		this.symbole = symbole;
+	}
+
+	/**
+	 * Obtenir le symbole associé à la pièce
+	 * @return le symbole associé à la pièce
+	 */
+	public String obtenirSymbole()
+	{
+		return this.symbole;
+	}
 }
