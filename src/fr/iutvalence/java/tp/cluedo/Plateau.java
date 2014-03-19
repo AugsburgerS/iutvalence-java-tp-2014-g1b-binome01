@@ -29,8 +29,8 @@ public class Plateau
 	public Plateau()
 	{
 		this.cases = new Case[this.NB_LIGNES][this.NB_COLONNES];
-		
-		// InitialisatiCloison.OUVERT, n de tCloison.OUVERT, utes les cases du Cloison.PORTE, lateau
+		/*
+		// Initialisation de toutes les cases du plateau
 		// Ligne 1
 		this.cases[0][0] = new Case(Piece.VIDE, Cloison.MUR, Cloison.OUVERT, Cloison.MUR, Cloison.MUR);
 		this.cases[0][1] = new Case(Piece.VIDE, Cloison.MUR, Cloison.OUVERT, Cloison.MUR, Cloison.OUVERT);
@@ -186,7 +186,7 @@ public class Plateau
 		this.cases[5][21] = new Case(Piece.SALLE_DE_BAINS, Cloison.OUVERT, Cloison.OUVERT, Cloison.MUR, Cloison.OUVERT);
 		this.cases[5][22] = new Case(Piece.SALLE_DE_BAINS, Cloison.OUVERT, Cloison.MUR, Cloison.MUR, Cloison.OUVERT);
 		this.cases[5][23] = new Case(Piece.VIDE, Cloison.MUR, Cloison.MUR, Cloison.MUR, Cloison.MUR);
-		/*
+		
 		// Ligne 7
 		this.cases[6][0] = new Case(Piece.VIDE,);
 		this.cases[6][1] = new Case(Piece.CUISINE,);

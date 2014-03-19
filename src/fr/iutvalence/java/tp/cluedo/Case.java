@@ -9,67 +9,42 @@ public class Case
 	/**
 	 * Le type de la case
 	 */
-	private static Piece TYPE_CASE;
+	private final Piece type_case;
 
 	/**
-	 * Type de la cloison au Nord de la case
+	 * Cloisons de la case dans l'ordre  suivant : Nord, Est, Sud, Ouest
 	 */
-	private static Cloison NORD;
-	
-	/**
-	 * Type de la cloison au SUD de la case
-	 */
-	private static Cloison SUD;
-	
-	/**
-	 * Type de la cloison au EST de la case
-	 */
-	private static Cloison EST;
-	
-	/**
-	 * Type de la cloison au OUEST de la case
-	 */
-	private static Cloison OUEST;
+	private final Cloison[] cloisons;
 
 	/**
 	 * Constructeur permettant d'initialiser une case par son type
 	 * @param typeCase le type de la case créée
 	 * @param nord Type, de cloison au nord de la case
 	 * @param sud Type, de cloison au sud de la case
-	 * @param est Type, de cloison au est de la case
-	 * @param ouest Type, de cloison au ouest de la case
+	 * @param est Type, de cloison à l'est de la case
+	 * @param ouest Type, de cloison à l'ouest de la case
 	 */
-	public Case(Piece typeCase, Cloison nord, Cloison est, Cloison sud, Cloison ouest)
+	public Case(Piece typeCase, Cloison[] cloisons)
 	{
-		this.TYPE_CASE = typeCase;
-		this.NORD = nord;
-		this.SUD = sud;
-		this.EST = est;
-		this.OUEST = ouest;
+		this.type_case = typeCase;
+		this.cloisons = cloisons;
 	}
 	
-	public static Piece obtenirTypeCase()
+	/**
+	 * Accesseur en lecture du type de la case
+	 * @return TypeCase
+	 */
+	public final Piece obtenirTypeCase()
 	{
-		return TYPE_CASE;
+		return type_case;
 	}
 
-	public static Cloison obtenirNORD()
+	/**
+	 * Accesseur en lecture du tableau de cloisons
+	 * @return cloisons
+	 */
+	public final Cloison[] obtenirCloisons()
 	{
-		return NORD;
-	}
-
-	public static Cloison obtenirSUD()
-	{
-		return SUD;
-	}
-
-	public static Cloison obtenirEST()
-	{
-		return EST;
-	}
-
-	public static Cloison obtenirOUEST()
-	{
-		return OUEST;
+		return cloisons;
 	}
 }

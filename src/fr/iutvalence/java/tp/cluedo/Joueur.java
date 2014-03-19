@@ -10,16 +10,21 @@ public class Joueur
 	/**
 	 * Attribut correspondant au prénom du joueur
 	 */
-	private static String PRENOM;
+	private final String prenom;
 
 	/**
 	 * Attribut correspondant au pion alloué au joueur
-	 */
-	private static Pion PION;
+	 */ 
+	private final Pion pion;
 
+	/**
+	 * Constructeur d'un joueur en fonction de son prénom et de son pion 
+	 * @param prenom prénom du joueur
+	 * @param pion pion attribué au joueur
+	 */
 	public Joueur(String prenom, Pion pion)
 	{
-		this.PRENOM = prenom;
-		this.PION = pion;
+		this.prenom = prenom;
+		this.pion = pion;
 	}
 }
