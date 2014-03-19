@@ -76,7 +76,7 @@ public enum Piece
 	/**
 	 * Constante correspondant au symbole d'une pièce
 	 */
-	public final String symbole;
+	private final String symbole;
 
 	/**
 	 * Constructeur d'une pièce initialisant le symbole de la dite pièce

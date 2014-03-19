@@ -717,7 +717,7 @@ public class Plateau
 		for(int ligne = 0; ligne < NB_LIGNES; ligne++)
 		{
 			for(int colonne = 0; colonne < NB_COLONNES; colonne++)
-				System.out.print(cases[ligne][colonne].obtenirTypeCase());
+				System.out.print(cases[ligne][colonne].obtenirTypeCase().obtenirSymbole());
 			System.out.println("");
 		}
 	}
