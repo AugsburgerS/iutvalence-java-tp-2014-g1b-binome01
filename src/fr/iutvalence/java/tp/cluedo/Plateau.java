@@ -29,6 +29,24 @@ public class Plateau
 	public Plateau()
 	{
 		this.cases = new Case[this.NB_LIGNES][this.NB_COLONNES];
+
+		Cloison[] oooo = {Cloison.OUVERT, Cloison.OUVERT, Cloison.OUVERT, Cloison.OUVERT};
+		Cloison[] ooom = {Cloison.OUVERT, Cloison.OUVERT, Cloison.OUVERT, Cloison.MUR};
+		Cloison[] oomo = {Cloison.OUVERT, Cloison.OUVERT, Cloison.MUR, Cloison.OUVERT};
+		Cloison[] oomm = {Cloison.OUVERT, Cloison.OUVERT, Cloison.MUR, Cloison.MUR};
+		Cloison[] omoo = {Cloison.OUVERT, Cloison.MUR, Cloison.OUVERT, Cloison.OUVERT};
+		Cloison[] omom = {Cloison.OUVERT, Cloison.MUR, Cloison.OUVERT, Cloison.MUR};
+		Cloison[] ommo = {Cloison.OUVERT, Cloison.MUR, Cloison.MUR, Cloison.OUVERT};
+		Cloison[] ommm = {Cloison.OUVERT, Cloison.MUR, Cloison.MUR, Cloison.MUR};
+		Cloison[] mooo = {Cloison.MUR, Cloison.OUVERT, Cloison.OUVERT, Cloison.OUVERT};
+		Cloison[] moom = {Cloison.MUR, Cloison.OUVERT, Cloison.OUVERT, Cloison.MUR};
+		Cloison[] momo = {Cloison.MUR, Cloison.OUVERT, Cloison.MUR, Cloison.OUVERT};
+		Cloison[] momm = {Cloison.MUR, Cloison.OUVERT, Cloison.MUR, Cloison.MUR};
+		Cloison[] mmoo = {Cloison.MUR, Cloison.MUR, Cloison.OUVERT, Cloison.OUVERT};
+		Cloison[] mmom = {Cloison.MUR, Cloison.MUR, Cloison.OUVERT, Cloison.MUR};
+		Cloison[] mmmo = {Cloison.MUR, Cloison.MUR, Cloison.MUR, Cloison.OUVERT};
+		Cloison[] mmmm = {Cloison.MUR, Cloison.MUR, Cloison.MUR, Cloison.MUR};
+
 		/*
 		// Initialisation de toutes les cases du plateau
 		// Ligne 1
@@ -717,7 +735,7 @@ public class Plateau
 		for(int ligne = 0; ligne < NB_LIGNES; ligne++)
 		{
 			for(int colonne = 0; colonne < NB_COLONNES; colonne++)
-				System.out.print(cases[ligne][colonne].obtenirTypeCase().obtenirSymbole());
+				System.out.print(cases[ligne][colonne].obtenirTypeCase());
 			System.out.println("");
 		}
 	}

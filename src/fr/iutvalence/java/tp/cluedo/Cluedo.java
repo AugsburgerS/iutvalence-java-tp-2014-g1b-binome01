@@ -23,6 +23,10 @@ public class Cluedo
 	 */
 	private Plateau plateau;
 
+	private Suspects Meurtrier;
+	//private Arme armeMeurtrier;
+	//private CartePiece pieceMeurtre;
+
 	// TODO (fait) écrire un commentaire plus précis
 	/**
 	 * Constructeur d'initialisation d'une partie avec un nombre de joueurs
@@ -60,5 +64,15 @@ public class Cluedo
 			pion = Pion.BLANC;
 			this.joueurs[i] = new Joueur(prenom, pion);
 		}
+		
+		this.distribuerCartes();
+	}
+
+	/**
+	 * Méthode attribuant les cartes aux joueurs et les cartes cachées
+	 */
+	private void distribuerCartes()
+	{
+		
 	}
 }

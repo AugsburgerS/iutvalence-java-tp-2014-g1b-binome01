@@ -1,0 +1,18 @@
+package fr.iutvalence.java.tp.cluedo;
+
+public enum Armes
+{
+	POIGNARD,
+	REVOLVER,
+	MATRAQUE,
+	CHANDELIER,
+	CORDE,
+	CLE_ANGLAISE,
+	FLACON_DE_POISON,
+	FER_A_CHEVAL,
+	HACHE,
+	HALTERE,
+	BATTE_DE_BASEBALL,
+	TROPHEE,
+	TUYAU_DE_PLOMB;
+}
