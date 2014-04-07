@@ -17,7 +17,7 @@ public class LanceurCluedo
 	{
 		System.out.println("Création de la partie !");
 		//System.out.println("Veuillez saisir le nombre de joueurs:");
-		//int nombreDeJoueurs = ...;
+		//int nombreDeJoueurs < 6 !!!;
 		Cluedo partieDeCluedo = new Cluedo(3);
 		System.out.println("Démarrage de la partie, bonne chance... !");
 		partieDeCluedo.jouer();
