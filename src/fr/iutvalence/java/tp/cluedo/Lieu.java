@@ -1,11 +1,10 @@
 package fr.iutvalence.java.tp.cluedo;
 
 /**
- * Classe permettant de manipuler les différentes pièces et couloirs
- * 
+ * Classe permettant de manipuler les différentes pièces et couloirs du jeu
  * @author augsburs
  */
-public enum Lieux
+public enum Lieu
 {
 
 	/**

@@ -9,7 +9,7 @@ public class Case
 	/**
 	 * Le type de la case
 	 */
-	private final Lieux type_case;
+	private final Lieu type_case;
 
 	/**
 	 * Cloisons de la case dans l'ordre  suivant : Nord, Est, Sud, Ouest
@@ -24,7 +24,7 @@ public class Case
 	 * @param est Type, de cloison à l'est de la case
 	 * @param ouest Type, de cloison à l'ouest de la case
 	 */
-	public Case(Lieux typeCase, Cloison[] cloisons)
+	public Case(Lieu typeCase, Cloison[] cloisons)
 	{
 		this.type_case = typeCase;
 		this.cloisons = cloisons;
@@ -34,7 +34,7 @@ public class Case
 	 * Accesseur en lecture du type de la case
 	 * @return TypeCase
 	 */
-	public final Lieux obtenirTypeCase()
+	public final Lieu obtenirTypeCase()
 	{
 		return type_case;
 	}

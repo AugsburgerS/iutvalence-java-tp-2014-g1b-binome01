@@ -4,7 +4,7 @@ package fr.iutvalence.java.tp.cluedo;
  * Enumération des cartes suspects
  * @author augsburs
  */
-public enum Suspects
+public enum Suspect
 {
 
     ROUGE("Mademoiselle Rose"),
@@ -23,7 +23,7 @@ public enum Suspects
      * Constructeur d'un suspect avec son nom
      * @param nom nom du suspect
      */
-    private Suspects(String nom)
+    private Suspect(String nom)
     {
     	this.nom = nom;
     }

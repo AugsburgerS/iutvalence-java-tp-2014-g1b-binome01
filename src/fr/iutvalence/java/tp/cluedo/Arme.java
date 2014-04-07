@@ -1,6 +1,10 @@
 package fr.iutvalence.java.tp.cluedo;
 
-public enum Armes
+/**
+ * Énumération des armes du jeu
+ * @author augsburs
+ */
+public enum Arme
 {
 	POIGNARD,
 	REVOLVER,
