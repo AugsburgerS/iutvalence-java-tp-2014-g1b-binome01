@@ -13,15 +13,32 @@ import java.util.Random;
 public class Cluedo
 {
 	/**
+	 * Constante égale au nombre de cartes distribuées à chaque joueur
+	 */
+	private static final int NB_CARTES_PAR_JOUEUR = 3;
+
+	/**
 	 * Variable correspondant au nombre de joueurs de la partie
 	 */
 	private int nombreDeJoueurs;
+	
+	/**
+	 * Booléen caractérisant l'état de la partie en cours
+	 */
+	private boolean finDeLaPartie = false;
+	
+	/**
+	 * Le numéro du tour en cours, le premier tour de la partie est le tour 1
+	 */
+	private int numeroTour;
 
 	/**
 	 * Tableau contenant la liste des joueurs de la partie (Le joueur à l'indice
 	 * 0 est le meurtrier)
 	 */
-	private Joueur[] joueurs;
+	private Joueur[] joueddurs;
+
+	List<Joueur> listeJoueurs = new LinkedList<Joueur>();
 
 	/**
 	 * Plateau de jeu
@@ -51,10 +68,16 @@ public class Cluedo
 	 */
 	public void jouer()
 	{
-		// this.plateau.afficherPlateau();
-
+		/* Initialisation de la partie */
 		this.initialiserJoueurs();
 		this.distribuerCartes();
+		this.numeroTour = 0;
+		
+		/* Début de la partie */
+		while (this.finDeLaPartie == false)
+		{
+			this.numeroTour++;
+		}
 	}
 
 	/**
@@ -72,15 +95,14 @@ public class Cluedo
 		{
 			int numeroDuPion = generateurDeNombresAleatoires.nextInt(listePions.size());
 			Pion pion = listePions.remove(numeroDuPion);
-			this.joueurs[i] = new Joueur(this.saisirPrenom(i), pion);
+			this.listeJoueurs.add(new Joueur(this.saisirPrenom(i), pion));
 		}
 	}
 
 	/**
 	 * Saisie clavier du prénom d'un joueur
 	 * 
-	 * @param numeroJoueur
-	 *            numéro du joueur auquel demander le prénom
+	 * @param numeroJoueur numéro du joueur auquel demander le prénom
 	 * @return prenom le prenom entré au clavier
 	 */
 	private String saisirPrenom(int numeroJoueur)
@@ -125,26 +147,27 @@ public class Cluedo
 		this.lieuMeurtre = listeLieux.get(numeroLieu);
 		listeLieux.remove(numeroLieu);
 
-		for (int i = 0; i < this.nombreDeJoueurs; i++)
-		{
-			switch (generateurDeNombresAleatoires.nextInt(3))
-			{
-			case 0:
-				int numeroCarteSuspect = generateurDeNombresAleatoires.nextInt(listeSuspects.size());
-				Suspect carteSuspect = listeSuspects.remove(numeroCarteSuspect);
-				this.joueurs[i].ajouterCarte(carteSuspect);
-				break;
-			case 1:
-				int numeroCarteArme = generateurDeNombresAleatoires.nextInt(listeArmes.size());
-				Arme carteArme = listeArmes.remove(numeroCarteArme);
-				this.joueurs[i].ajouterCarte(carteArme);
-				break;
-			case 2:
-				int numeroCarteLieu = generateurDeNombresAleatoires.nextInt(listeLieux.size());
-				Lieu carteLieu = listeLieux.remove(numeroCarteLieu);
-				this.joueurs[i].ajouterCarte(carteLieu);
-				break;
-			}
-		}
+		for (Joueur joueurCourrant : this.listeJoueurs)
+			for (int j = 0; j < NB_CARTES_PAR_JOUEUR; j++)
+				switch (generateurDeNombresAleatoires.nextInt(3))
+				{
+				case 0:
+					int numeroCarteSuspect = generateurDeNombresAleatoires.nextInt(listeSuspects.size());
+					Suspect carteSuspect = listeSuspects.remove(numeroCarteSuspect);
+					joueurCourrant.ajouterCarte(carteSuspect);
+					break;
+				case 1:
+					int numeroCarteArme = generateurDeNombresAleatoires.nextInt(listeArmes.size());
+					Arme carteArme = listeArmes.remove(numeroCarteArme);
+					joueurCourrant.ajouterCarte(carteArme);
+					break;
+				case 2:
+					int numeroCarteLieu = generateurDeNombresAleatoires.nextInt(listeLieux.size());
+					Lieu carteLieu = listeLieux.remove(numeroCarteLieu);
+					joueurCourrant.ajouterCarte(carteLieu);
+					break;
+				default:
+					break;
+				}
 	}
 }

@@ -726,17 +726,4 @@ public class Plateau
 		this.cases[25][23] = new Case(Piece.BUREAU,);
 		*/
 	}
-	
-	/**
-	 * Méthode affichant le plateau (en console pour le moment)
-	 */
-	public void afficherPlateau()
-	{
-		for(int ligne = 0; ligne < NB_LIGNES; ligne++)
-		{
-			for(int colonne = 0; colonne < NB_COLONNES; colonne++)
-				System.out.print(cases[ligne][colonne].obtenirTypeCase());
-			System.out.println("");
-		}
-	}
 }
