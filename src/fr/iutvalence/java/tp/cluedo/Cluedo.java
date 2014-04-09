@@ -33,12 +33,9 @@ public class Cluedo
 	private int numeroTour;
 
 	/**
-	 * Tableau contenant la liste des joueurs de la partie (Le joueur à l'indice
-	 * 0 est le meurtrier)
+	 * Collection des joueurs de la partie
 	 */
-	private Joueur[] joueddurs;
-
-	List<Joueur> listeJoueurs = new LinkedList<Joueur>();
+	private List<Joueur> listeJoueurs = new LinkedList<Joueur>();
 
 	/**
 	 * Plateau de jeu
@@ -71,12 +68,48 @@ public class Cluedo
 		/* Initialisation de la partie */
 		this.initialiserJoueurs();
 		this.distribuerCartes();
+		this.placerPionsJoueurs();
 		this.numeroTour = 0;
+		Random generateurLanceDe = new Random();
+		Position[] depPossJoueurCourant;
 		
 		/* Début de la partie */
-		while (this.finDeLaPartie == false)
+		while (!this.finDeLaPartie)
 		{
 			this.numeroTour++;
+			for (Joueur joueurCourant : this.listeJoueurs)
+			{
+				int de1 = generateurLanceDe.nextInt(6);
+				int de2 = generateurLanceDe.nextInt(6);
+				Position posiChoisie;
+				
+				/* Cas où le dé est un double 6 ou double 1 */
+				if ((de1 == 6 && de2 == 6) || (de1 == 1 && de2 == 1))
+					posiChoisie = joueurCourant.demanderChoixDeplacementDouble();
+				else
+				{
+					depPossJoueurCourant = joueurCourant.deplacementsPossibles(de1, de2);
+					posiChoisie = joueurCourant.demanderChoixDeplacement(depPossJoueurCourant);
+				}
+				joueurCourant.deplacerPion(posiChoisie);
+				
+				/* Formulation d'une hypothèse par le joueur */
+				joueurCourant.formulerHypothese();
+				
+				/* Formulation d'une accusation par le joueur, si il a tout juste la partie est gagnée */
+				this.finDeLaPartie = joueurCourant.formulerAccusation(this.meurtrier, this.armeMeurtrier, this.lieuMeurtre);
+			}
+		}
+	}
+
+	/**
+	 * Place tous les pions sur le plateau (ceux n'étant pas attribués à un joueur servant pour les hypothèses
+	 */
+	private void placerPionsJoueurs()
+	{
+		for (Pion pion : Pion.values())
+		{
+			//TODO Placer chaque pion dans une case suivant s
 		}
 	}
 
@@ -147,24 +180,24 @@ public class Cluedo
 		this.lieuMeurtre = listeLieux.get(numeroLieu);
 		listeLieux.remove(numeroLieu);
 
-		for (Joueur joueurCourrant : this.listeJoueurs)
+		for (Joueur joueurCourant : this.listeJoueurs)
 			for (int j = 0; j < NB_CARTES_PAR_JOUEUR; j++)
 				switch (generateurDeNombresAleatoires.nextInt(3))
 				{
 				case 0:
 					int numeroCarteSuspect = generateurDeNombresAleatoires.nextInt(listeSuspects.size());
 					Suspect carteSuspect = listeSuspects.remove(numeroCarteSuspect);
-					joueurCourrant.ajouterCarte(carteSuspect);
+					joueurCourant.ajouterCarte(carteSuspect);
 					break;
 				case 1:
 					int numeroCarteArme = generateurDeNombresAleatoires.nextInt(listeArmes.size());
 					Arme carteArme = listeArmes.remove(numeroCarteArme);
-					joueurCourrant.ajouterCarte(carteArme);
+					joueurCourant.ajouterCarte(carteArme);
 					break;
 				case 2:
 					int numeroCarteLieu = generateurDeNombresAleatoires.nextInt(listeLieux.size());
 					Lieu carteLieu = listeLieux.remove(numeroCarteLieu);
-					joueurCourrant.ajouterCarte(carteLieu);
+					joueurCourant.ajouterCarte(carteLieu);
 					break;
 				default:
 					break;

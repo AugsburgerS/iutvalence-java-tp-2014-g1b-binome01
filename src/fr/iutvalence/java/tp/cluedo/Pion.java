@@ -7,32 +7,40 @@ package fr.iutvalence.java.tp.cluedo;
 public enum Pion
 {
 	/**
-	 * Le pion rouge
+	 * La liste des pions disponibles
 	 */
-	ROUGE,
+	ROUGE(Lieu.CHAMBRE),
+	JAUNE(Lieu.HALL),
+	BLANC(Lieu.SALLE_DE_BAINS),
+	VERT(Lieu.BUREAU),
+	BLEU(Lieu.CUISINE),
+	VIOLET(Lieu.BIBLIOTHEQUE);
 	
 	/**
-	 * Le pion jaune
+	 * Lieu du pion au début de la partie
 	 */
-	JAUNE,
+	private final Lieu lieuInitialPion;
 	
 	/**
-	 * Le pion blanc
+	 * Position du pion sur le plateau
 	 */
-	BLANC,
+	private Position position;
 	
 	/**
-	 * Le pion vert
+	 * Constructeur d'un pion avec son lieu initial sur le plateau
+	 * @param lieuInitialPion lieu du pion au début de la partie
 	 */
-	VERT,
+	private Pion(Lieu lieuInitialPion)
+	{
+		this.lieuInitialPion = lieuInitialPion;
+	}
 	
 	/**
-	 * Le pion bleu
+	 * Déplacer un pion à une certaine position
+	 * @param position où va aller le pion
 	 */
-	BLEU,
-	
-	/**
-	 * Le pion violet
-	 */
-	VIOLET;
+	public void deplacerPion(Position position)
+	{
+		this.position = position;
+	}
 }
