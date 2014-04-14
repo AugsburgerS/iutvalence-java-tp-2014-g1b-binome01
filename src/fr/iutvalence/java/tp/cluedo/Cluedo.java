@@ -71,7 +71,7 @@ public class Cluedo
 		this.placerPionsJoueurs();
 		this.numeroTour = 0;
 		Random generateurLanceDe = new Random();
-		Position[] depPossJoueurCourant;
+		List<Position> depPossJoueurCourant = new LinkedList<Position>();
 		
 		/* Début de la partie */
 		while (!this.finDeLaPartie)
@@ -88,7 +88,7 @@ public class Cluedo
 					posiChoisie = joueurCourant.demanderChoixDeplacementDouble();
 				else
 				{
-					depPossJoueurCourant = joueurCourant.deplacementsPossibles(de1, de2);
+					depPossJoueurCourant.addAll(joueurCourant.deplacementsPossibles(this.plateau, de1 + de2));
 					posiChoisie = joueurCourant.demanderChoixDeplacement(depPossJoueurCourant);
 				}
 				joueurCourant.deplacerPion(posiChoisie);
@@ -109,7 +109,7 @@ public class Cluedo
 	{
 		for (Pion pion : Pion.values())
 		{
-			//TODO Placer chaque pion dans une case suivant s
+			pion.deplacerPion(pion.lieuInitialPion().positionsDuLieu().get(0));
 		}
 	}
 
@@ -141,7 +141,7 @@ public class Cluedo
 	private String saisirPrenom(int numeroJoueur)
 	{
 		System.out.println("Joueur n°" + (numeroJoueur) + ", veuillez saisir votre prénom:");
-		// TODO Demander au joueur (console) de rentrer son prénom
+		// TODO Demander au joueur de rentrer son prénom
 		return null;
 	}
 

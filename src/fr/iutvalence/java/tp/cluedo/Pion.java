@@ -43,4 +43,22 @@ public enum Pion
 	{
 		this.position = position;
 	}
+	
+	/**
+	 * Demander la position initiale du pion
+	 * @return lieu initial du pion
+	 */
+	public Lieu lieuInitialPion()
+	{
+		return this.lieuInitialPion;
+	}
+	
+	/**
+	 * Accesseur en lecture de la position du pion
+	 * @return position du pion
+	 */
+	public Position demanderPosition()
+	{
+		return this.position;
+	}
 }

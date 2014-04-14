@@ -10,12 +10,12 @@ public class Plateau
 	/**
 	 * Nombre de cases par ligne
 	 */
-	private static final int NB_COLONNES = 24;
+	public static final int NB_COLONNES = 24;
 
 	/**
 	 * Nombre de cases par colonne
 	 */
-	private static final int NB_LIGNES = 26;
+	public static final int NB_LIGNES = 26;
 
 	/**
 	 * Tableau du plateau (Chaque case contient une pièce, un couloir ou une
@@ -46,7 +46,7 @@ public class Plateau
 		Cloison[] mmom = {Cloison.MUR, Cloison.MUR, Cloison.OUVERT, Cloison.MUR};
 		Cloison[] mmmo = {Cloison.MUR, Cloison.MUR, Cloison.MUR, Cloison.OUVERT};
 		Cloison[] mmmm = {Cloison.MUR, Cloison.MUR, Cloison.MUR, Cloison.MUR};
-
+		//TODO Remplir toutes les cases du tableau
 		/*
 		// Initialisation de toutes les cases du plateau
 		// Ligne 1
@@ -725,5 +725,14 @@ public class Plateau
 		this.cases[25][22] = new Case(Piece.BUREAU,);
 		this.cases[25][23] = new Case(Piece.BUREAU,);
 		*/
+	}
+	
+	/**
+	 * Accesseur en lecture du tableau de cases du plateau
+	 * @return talbeau 2D de cases du plateau
+	 */
+	public Case[][] demanderCasesPlateau()
+	{
+		return this.cases;
 	}
 }
